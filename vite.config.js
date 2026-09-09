@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/FitAI/",  // ⬅️ فقط این خط اضافه شد
+  base: "/FitAI/",  // ⬅️ این خط اضافه شد
   server: {
     host: "0.0.0.0",
     port: 3000,
