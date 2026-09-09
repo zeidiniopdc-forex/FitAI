@@ -1,0 +1,21 @@
+{
+  "name": "FitAI - مربی هوشمند بدنسازی",
+  "short_name": "FitAI",
+  "description": "مربی هوشمند بدنسازی با هوش مصنوعی",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "lang": "fa",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["health", "fitness", "lifestyle"]
+}
