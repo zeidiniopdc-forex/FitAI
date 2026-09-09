@@ -10,7 +10,6 @@
     <meta name="apple-mobile-web-app-title" content="FitAI" />
     <meta name="mobile-web-app-capable" content="yes" />
     
-    <!-- مسیرها با /FitAI/ اصلاح شدند -->
     <link rel="manifest" href="/FitAI/manifest.json" />
     <link rel="icon" type="image/svg+xml" href="/FitAI/icon.svg" />
     <link rel="apple-touch-icon" href="/FitAI/icon.svg" />
@@ -35,7 +34,6 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          // مسیر service worker هم اصلاح شد
           navigator.serviceWorker.register('/FitAI/sw.js')
             .then(reg => console.log('SW registered'))
             .catch(err => console.log('SW registration failed', err));
