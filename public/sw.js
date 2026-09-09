@@ -1,9 +1,9 @@
 const CACHE_NAME = 'fitai-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icon.svg'
+  '/FitAI/',
+  '/FitAI/index.html',
+  '/FitAI/manifest.json',
+  '/FitAI/icon.svg'
 ];
 
 self.addEventListener('install', event => {
@@ -29,7 +29,7 @@ self.addEventListener('fetch', event => {
           return response;
         });
       }).catch(() => {
-        return caches.match('/index.html');
+        return caches.match('/FitAI/index.html');
       })
   );
 });
