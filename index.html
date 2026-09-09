@@ -9,9 +9,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="FitAI" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-    <link rel="apple-touch-icon" href="/icon.svg" />
+    
+    <!-- مسیرها با /FitAI/ اصلاح شدند -->
+    <link rel="manifest" href="/FitAI/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/FitAI/icon.svg" />
+    <link rel="apple-touch-icon" href="/FitAI/icon.svg" />
+    
     <title>FitAI - مربی هوشمند بدنسازی</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +23,7 @@
       html, body { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Vazirmatn', sans-serif; }
       html.dark, html.dark body { background-color: #0f172a; color: #f1f5f9; }
       html.light, html.light body { background-color: #f8fafc; color: #0f172a; }
-      /* Prevent pull-to-refresh on mobile */
       body { overscroll-behavior-y: contain; }
-      /* Safe area for notched devices */
       @supports (padding: env(safe-area-inset-bottom)) {
         body { padding-bottom: env(safe-area-inset-bottom); }
       }
@@ -34,7 +35,8 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
+          // مسیر service worker هم اصلاح شد
+          navigator.serviceWorker.register('/FitAI/sw.js')
             .then(reg => console.log('SW registered'))
             .catch(err => console.log('SW registration failed', err));
         });
