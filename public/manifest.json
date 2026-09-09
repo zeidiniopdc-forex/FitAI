@@ -1,83 +1,31 @@
-عالی! 🎉 service-worker رو دیدم. ولی **مسیرها اشتباهن** و باید اصلاح بشن.
-
-## ⚠️ مشکل service-worker.js
-
-توی GitHub Pages، همه چیز زیر `/FitAI/` هست، نه root.
-
-### نسخه اصلاح‌شده:
-
-```javascript
-const CACHE_NAME = 'fitai-v1';
-const urlsToCache = [
-  '/FitAI/',
-  '/FitAI/index.html',
-  '/FitAI/manifest.json',
-  '/FitAI/icon.svg'
-];
-
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-  );
-});
-
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) return response;
-        return fetch(event.request).then(response => {
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-          const responseToCache = response.clone();
-          caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, responseToCache);
-          });
-          return response;
-        });
-      }).catch(() => {
-        return caches.match('/FitAI/index.html');
-      })
-  );
-});
-
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
-```
-
----
-
-## 🤔 حالا باید `index.html` رو ببینم
-
-لطفاً محتوای `index.html` رو بفرست تا چک کنم:
-
-1. آیا manifest رو درست reference کرده؟
-2. آیا service-worker رو register می‌کنه؟
-3. آیا آیکون‌ها رو درست لینک کرده؟
-
----
-
-## 📋 سوالات نهایی:
-
-**سوال ۱:** آیا آیکون‌های PNG داری؟
-- `icon-192.png`
-- `icon-512.png`
-
-اگه نداری، باید بسازیم.
-
-**سوال ۲:** آیا `index.html` رو می‌تونی بفرستی؟
-
-منتظرم 🚀
+{
+  "name": "FitAI - مربی هوشمند بدنسازی",
+  "short_name": "FitAI",
+  "description": "مربی هوشمند بدنسازی با هوش مصنوعی",
+  "start_url": "/FitAI/",
+  "scope": "/FitAI/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "lang": "fa",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/FitAI/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/FitAI/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/FitAI/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["health", "fitness", "lifestyle"]
+}
