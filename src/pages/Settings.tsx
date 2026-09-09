@@ -73,6 +73,26 @@ export default function Settings() {
         </div>
       </div>
 
+      {/* Install Guide */}
+      <div className="bg-gradient-to-l from-primary-500 to-accent-500 rounded-2xl p-6 text-white">
+        <h3 className="font-bold text-white mb-3 flex items-center gap-2">
+          📱 نصب روی موبایل
+        </h3>
+        <div className="space-y-3 text-sm">
+          <div className="bg-white/10 rounded-xl p-3">
+            <p className="font-medium mb-1">📲 اندروید (Chrome):</p>
+            <p className="text-white/80 text-xs">منوی ⋮ → "Add to Home screen" یا "نصب اپلیکیشن"</p>
+          </div>
+          <div className="bg-white/10 rounded-xl p-3">
+            <p className="font-medium mb-1">🍎 آیفون (Safari):</p>
+            <p className="text-white/80 text-xs">دکمه Share → "Add to Home Screen"</p>
+          </div>
+          <p className="text-white/70 text-xs">
+            💡 بعد از نصب، FitAI مانند اپلیکیشن روی گوشی اجرا می‌شود و حتی آفلاین هم کار می‌کند!
+          </p>
+        </div>
+      </div>
+
       {/* App Info */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
         <h3 className="font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">

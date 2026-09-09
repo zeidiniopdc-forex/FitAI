@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AppProvider } from './context/AppContext';
 import Layout from './components/Layout';
+import PWAInstallBanner from './components/PWAInstallBanner';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Workout from './pages/Workout';
@@ -40,9 +41,12 @@ function AppContent() {
   };
 
   return (
-    <Layout currentPage={currentPage} onNavigate={setCurrentPage}>
-      {renderPage()}
-    </Layout>
+    <>
+      <Layout currentPage={currentPage} onNavigate={setCurrentPage}>
+        {renderPage()}
+      </Layout>
+      <PWAInstallBanner />
+    </>
   );
 }
 
